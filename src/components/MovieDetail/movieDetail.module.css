@@ -1,0 +1,31 @@
+.movieContent{
+    display: flex;
+    flex-wrap: wrap;
+}
+.movieContent h3{
+    margin: 5px;
+}
+.movie_title{
+    width: 100%;
+}
+.poster{
+    width: 40%;
+}
+.poster img{
+    width: 100%;
+}
+.movie_describe{
+    width: 60%;
+}
+.genre{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin: 5px;
+    padding: 5px;
+}
+.movie_describe_genre{
+    font-size: 12px;
+    color: gold;
+}

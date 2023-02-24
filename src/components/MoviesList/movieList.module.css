@@ -1,0 +1,11 @@
+.moviesList{
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 5px;
+    align-items: inherit;
+    /*flex-direction: column;*/
+}
+.wrapper{
+    border: 2px solid chartreuse;
+    width: 100%;
+}

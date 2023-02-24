@@ -1,0 +1,39 @@
+.moviesList{
+    display: flex;
+    flex-wrap: wrap;
+}
+.container{
+    margin-top: 65px;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 70%;
+    column-gap: 20px;
+}
+.sidebar{
+    width: 30%;
+}
+.content{
+    border: 2px solid aqua;
+    width: 100%;
+}
+.searchInput{
+    width: 100%;
+}
+.searchInput input{
+    width: 70%;
+}
+.genreWrap{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    background-color: #282828;
+    width: 20%;
+    background-image: url('https://s.kkhd24.co/templates/ntpl/images/menu.png');
+    background-repeat: no-repeat;
+    height: max-content;
+    border-radius: 15px;
+}
+.movieWrap{
+    width: 78%;
+}

@@ -12,7 +12,7 @@ html, body {
     align-items: center;
     gap: 20px;
     width: 100%;
-    /*position: fixed;*/
+    position: fixed;
     z-index: 3;
 }
 
@@ -43,4 +43,10 @@ html, body {
 .menu a[class='active'] {
     text-decoration: underline;
     color: red;
+}
+.searchInput{
+    width: 100%;
+}
+.searchInput input{
+    width: 70%;
 }

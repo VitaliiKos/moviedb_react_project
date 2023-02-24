@@ -1,0 +1,79 @@
+.actorPosterDescription {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    padding: 5px;
+}
+
+.actorPosterDescription h5 {
+    margin: 0;
+}
+
+.actorPoster {
+    width: 100%;
+    background-color: rgba(229, 80, 80, 0.56);
+    display: flex;
+    align-items: flex-start;
+
+}
+
+.actorPoster img {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.actorDetail, .actorDetailLight {
+    box-shadow: 0 0 2px 1px rgba(101, 252, 90, 0.8);
+    margin: 2px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border-radius: 5px;
+    width: 9%;
+}
+
+.actorDetail {
+    background: rgb(240, 183, 161); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(240, 183, 161, 1) 0%, rgba(140, 51, 16, 1) 50%, rgba(117, 34, 1, 1) 51%, rgba(191, 110, 78, 1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(240, 183, 161, 1) 0%, rgba(140, 51, 16, 1) 50%, rgba(117, 34, 1, 1) 51%, rgba(191, 110, 78, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(240, 183, 161, 1) 0%, rgba(140, 51, 16, 1) 50%, rgba(117, 34, 1, 1) 51%, rgba(191, 110, 78, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0b7a1', endColorstr='#bf6e4e', GradientType=0); /* IE6-9 */
+
+}
+
+.actorDetailLight {
+    background: rgb(59, 103, 158); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(59, 103, 158, 1) 0%, rgba(43, 136, 217, 1) 50%, rgba(32, 124, 202, 1) 51%, rgba(125, 185, 232, 1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(59, 103, 158, 1) 0%, rgba(43, 136, 217, 1) 50%, rgba(32, 124, 202, 1) 51%, rgba(125, 185, 232, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(59, 103, 158, 1) 0%, rgba(43, 136, 217, 1) 50%, rgba(32, 124, 202, 1) 51%, rgba(125, 185, 232, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3b679e', endColorstr='#7db9e8', GradientType=0); /* IE6-9 */
+}
+
+@media screen and (max-width: 1200px) {
+    .actorDetail, .actorDetailLight {
+        width: 14%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .actorDetail, .actorDetailLight {
+        width: 22%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .actorDetail, .actorDetailLight {
+        width: 31%;
+    }
+
+    .actorPosterDescription h5 {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .actorDetail, .actorDetailLight {
+        width: 95%;
+    }
+
+}

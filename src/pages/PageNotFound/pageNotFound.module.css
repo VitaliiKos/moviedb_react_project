@@ -1,7 +1,14 @@
 .font{
-    background-image: url('error-404.jpg');
-    background-size: cover;
+    /*background-image: url('error-404.jpg');*/
+    /*background-size: cover;*/
     height: calc(100vh - 111px);
     max-width: 100%;
+    color: #f60d05;
+    margin-top: 20%;
+    text-align: left;
+    font-weight: 600;
 
 }
+.font h2{font-size: 32px}
+.font h3{font-size: 26px}
+.font p{font-size: 20px}
