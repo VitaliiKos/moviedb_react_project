@@ -36,75 +36,75 @@ const MoviesList = () => {
         <div className={css.wrapper}>
             <FilterForm/>
 
-            <div>
-
-                <button hidden={Number(params_for_search[page_param_key]) < 2} onClick={() => {
-                    set_number_page(1)
-                }}>
-                    1
-                </button>
-
-                <button hidden={Number(params_for_search[page_param_key]) < 3} onClick={() => {
-                    set_number_page(2)
-                }}>
-                    2
-                </button>
-
-                <button hidden={Number(params_for_search[page_param_key]) - 5 < 1} onClick={() => {
-                    change_number_page(-5)
-                }}>
-                    -5
-                </button>
-
-                <button hidden={
-                    Number(params_for_search[page_param_key]) < 2
-                } onClick={() => {
-                    change_number_page(-1)
-                }}>
-                    Prev
-                </button>
-
-                <button>
-                    Pages
-                </button>
-
-                <button hidden={
-                    Number(params_for_search[page_param_key]) >= 500 ||
-                    Number(params_for_search[page_param_key]) === total_pages
-                } onClick={() => {
-                    change_number_page(1)
-                }}>
-                    Next
-                </button>
-
-                <button hidden={
-                    Number(params_for_search[page_param_key]) + 10 >= 500 ||
-                    Number(params_for_search[page_param_key]) + 10 >= total_pages
-                } onClick={() => {
-                    change_number_page(10)
-                }}>
-                    +10
-                </button>
-
-                <button hidden={
-                    Number(params_for_search[page_param_key]) === total_pages ||
-                    Number(params_for_search[page_param_key]) >= 500
-                } onClick={() => {
-                    set_number_page(total_pages > 500 ? 500 : total_pages)
-                }}>
-                    {total_pages > 500 ? 500 : total_pages}
-                </button>
-
-
-
-            </div>
-
             <div className={css.moviesList}>
                 {
                     !!movies.length &&
                     movies.map(movie => <Movie key={movie.id} movie={movie}/>)
                 }
             </div>
+
+            <div className={css.navcent}>
+
+                <a hidden={Number(params_for_search[page_param_key]) < 2} onClick={() => {
+                    set_number_page(1)
+                }}>
+                    1
+                </a>
+
+                <a hidden={Number(params_for_search[page_param_key]) < 3} onClick={() => {
+                    set_number_page(2)
+                }}>
+                    2
+                </a>
+
+                <a hidden={Number(params_for_search[page_param_key]) - 5 < 1} onClick={() => {
+                    change_number_page(-5)
+                }}>
+                    -5
+                </a>
+
+                <a hidden={
+                    Number(params_for_search[page_param_key]) < 2
+                } onClick={() => {
+                    change_number_page(-1)
+                }}>
+                    Prev
+                </a>
+
+                <a>
+                    Pages
+                </a>
+
+                <a hidden={
+                    Number(params_for_search[page_param_key]) >= 500 ||
+                    Number(params_for_search[page_param_key]) === total_pages
+                } onClick={() => {
+                    change_number_page(1)
+                }}>
+                    Next
+                </a>
+
+                <a hidden={
+                    Number(params_for_search[page_param_key]) + 10 >= 500 ||
+                    Number(params_for_search[page_param_key]) + 10 >= total_pages
+                } onClick={() => {
+                    change_number_page(10)
+                }}>
+                    +10
+                </a>
+
+                <a hidden={
+                    Number(params_for_search[page_param_key]) === total_pages ||
+                    Number(params_for_search[page_param_key]) >= 500
+                } onClick={() => {
+                    set_number_page(total_pages > 500 ? 500 : total_pages)
+                }}>
+                    {total_pages > 500 ? 500 : total_pages}
+                </a>
+
+
+            </div>
+
         </div>
     );
 };

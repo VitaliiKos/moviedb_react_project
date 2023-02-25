@@ -3,12 +3,26 @@ import {styled} from '@mui/material/styles';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
+import {useDispatch, useSelector} from "react-redux";
+import {genreActions} from "../../redux/slice/genreSlice";
 
 const SwitchTheme = () => {
 
+    const dispatch = useDispatch();
+    const {themeStatus} = useSelector(state => state.genre);
+    const statusTheme = JSON.parse(localStorage.getItem('themeStyle'));
+
     useEffect(() => {
-        localStorage.setItem('themeStyle', 'dark');
-    }, [])
+        console.log(themeStatus)
+        console.log(statusTheme)
+        if (statusTheme === null) {
+            const themeStatus = true;
+            localStorage.setItem('themeStyle', JSON.stringify(themeStatus));
+            dispatch(genreActions.chooseTheme(themeStatus))
+        } else {
+            dispatch(genreActions.chooseTheme(statusTheme))
+        }
+    }, [dispatch, statusTheme, themeStatus])
 
     const MaterialUISwitch = styled(Switch)(({theme}) => ({
         width: 62,
@@ -59,15 +73,15 @@ const SwitchTheme = () => {
 
 
     const changeTheme = () => {
-        const statusTheme = localStorage.getItem('themeStyle');
-        statusTheme ==='dark'?localStorage.setItem('themeStyle', 'light'): localStorage.setItem('themeStyle', 'dark');
+        const statusTheme = JSON.parse(localStorage.getItem('themeStyle'));
+        localStorage.setItem('themeStyle', JSON.stringify(!statusTheme))
     }
 
     return (
         <div>
-            <FormGroup onChange={()=>changeTheme()}>
+            <FormGroup onChange={() => changeTheme()}>
                 <FormControlLabel
-                    control={<MaterialUISwitch sx={{m: 1}} defaultChecked/>}
+                    control={<MaterialUISwitch sx={{m: 1}} defaultChecked={statusTheme}/>}
                     label=""
                 />
             </FormGroup>

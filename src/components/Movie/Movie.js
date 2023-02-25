@@ -37,7 +37,10 @@ const Movie = ({movie}) => {
                 </div>
 
                 <div className={css.shortPosterBox}>
+                    <div className={css.play}>
+                        <i className="fa-solid fa-circle-play"></i>
 
+                    </div>
                     <NavLink to={`${id}`} className={css.posterShort}>
                         <img src={`${imageUrl}${poster_path}`} alt={title}/>
                     </NavLink>

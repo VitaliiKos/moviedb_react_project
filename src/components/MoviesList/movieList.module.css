@@ -1,9 +1,40 @@
+.navcent {
+    /*background-image: url('line.png');*/
+    background-repeat: repeat-x;
+    height: 60px;
+    /*width: 500px;*/
+    padding: 0 0 0 10px;
+}
+.navcent, .navprev {
+    display: flex;
+    justify-content: center;
+    background-position: 0 0;
+}
+
+.navcent a {
+    font-weight: 700;
+    color: #FFF;
+    background-image: url('https://s.kkhd24.co/templates/ntpl/images/navor.png');
+    display: block;
+}
+.navcent a, .navcent span {
+    text-decoration: none;
+    background-repeat: no-repeat;
+    float: left;
+    height: 63px;
+    width: 63px;
+    line-height: 70px;
+    margin: -3px 0 0 -12px;
+    text-align: center;
+    background-position: 0 0;
+}
+
+
 .moviesList{
     display: flex;
     flex-wrap: wrap;
     row-gap: 5px;
     align-items: inherit;
-    /*flex-direction: column;*/
 }
 .wrapper{
     border: 2px solid chartreuse;

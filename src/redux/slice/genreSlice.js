@@ -7,7 +7,7 @@ const initialState = {
     genres:[],
     loading : null,
     errors:null,
-    themeStatus:true
+    themeStatus:null
 
 };
 
@@ -27,8 +27,8 @@ const  genreSlice = createSlice({
     name:'genreSlice',
     initialState,
     reducers:{
-        chooseTheme: (state) => {
-            state.themeStatus = !state.themeStatus
+        chooseTheme: (state,action) => {
+            state.themeStatus = action.payload
         },
     },
     extraReducers:builder => builder
