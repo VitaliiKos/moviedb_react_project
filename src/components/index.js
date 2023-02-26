@@ -12,3 +12,4 @@ export * from './UserInfo/UserInfo';
 export * from './SwitchTheme/SwitchTheme';
 export * from './ActorsList/ActorList';
 export * from './Actor/Actor';
+export * from './MyFavoriteMovie/MyFavoriteMovie';

@@ -1,0 +1,38 @@
+.box {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 3px;
+}
+
+.boxBgLight {
+}
+
+.boxBgDark input, .boxBgDark button {
+    color: goldenrod;
+}
+
+.box button {
+    cursor: pointer;
+    border: 0;
+    position: absolute;
+    right: 0;
+    top: 30%;
+    background: none;
+}
+
+.box input {
+    border: 0;
+    border-bottom: 1px solid #555;
+    background: transparent;
+    width: 100%;
+    padding: 8px 0 5px 0;
+    font-size: 16px;
+}
+
+.box input:focus {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #e74c3c;
+}

@@ -1,42 +1,78 @@
-.navcent {
-    /*background-image: url('line.png');*/
-    background-repeat: repeat-x;
-    height: 60px;
-    /*width: 500px;*/
-    padding: 0 0 0 10px;
-}
-.navcent, .navprev {
-    display: flex;
-    justify-content: center;
-    background-position: 0 0;
-}
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 
-.navcent a {
-    font-weight: 700;
-    color: #FFF;
-    background-image: url('https://s.kkhd24.co/templates/ntpl/images/navor.png');
-    display: block;
-}
-.navcent a, .navcent span {
-    text-decoration: none;
-    background-repeat: no-repeat;
-    float: left;
-    height: 63px;
-    width: 63px;
-    line-height: 70px;
-    margin: -3px 0 0 -12px;
-    text-align: center;
-    background-position: 0 0;
-}
-
-
-.moviesList{
+.moviesList {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     row-gap: 5px;
     align-items: inherit;
 }
-.wrapper{
-    border: 2px solid chartreuse;
+
+.wrapper {
     width: 100%;
+}
+
+.container ul {
+    padding-left: 5px;
+}
+
+.container {
+    font-family: "Poppins", sans-serif;
+    margin: 15px 0;
+    padding: 0 15px 15px;
+    border-radius: 3px;
+}
+
+.pagination {
+    display: flex;
+    list-style: none;
+}
+
+.pagination li {
+    cursor: pointer;
+    flex: 1;
+    margin: 0 5px;
+    background: #dde1e7;
+    border-radius: 3px;
+    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px rgba(94, 104, 121, 0.288);
+}
+
+.pagination li a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #4d3252;
+    height: 45px;
+    width: 55px;
+    display: block;
+    line-height: 45px;
+}
+
+.pagination li:first-child a {
+    width: 120px;
+}
+
+.pagination li:last-child a {
+    width: 100px;
+}
+
+.pagination li.active {
+    box-shadow: inset -3px -3px 7px #ffffff73,
+    inset 3px 3px 5px rgba(94, 104, 121, 0.288);
+}
+
+.pagination li.active a {
+    font-size: 17px;
+    color: #6f6cde;
+}
+
+.pagination li:first-child {
+    margin: 0 15px 0 0;
+}
+
+.pagination li:last-child {
+    margin: 0 0 0 15px;
+}
+
+.pagination li.notPage {
+    cursor: initial;
 }

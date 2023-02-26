@@ -1,13 +1,13 @@
 import React, {useEffect} from 'react';
-import {NavLink} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
+import {NavLink} from "react-router-dom";
 
 import {StarsRating} from "../StarsRating/StarsRating";
-import {imageUrl} from "../../config";
-import css from './movie.module.css';
 import {favoriteActions} from "../../redux";
+import {imageUrl} from "../../config";
+import css from "./myFavoriteMovie.module.css";
 
-const Movie = ({movie}) => {
+const MyFavoriteMovie = ({myMovie}) => {
     const {themeStatus} = useSelector(state => state.genre);
     const dispatch = useDispatch();
     const {favoriteMovies, favoriteCount} = useSelector(state => state.favorite);
@@ -21,7 +21,7 @@ const Movie = ({movie}) => {
         overview,
         vote_average,
         vote_count,
-    } = movie;
+    } = myMovie;
     const favorite_status = favoriteMovies ? id in favoriteMovies : false;
 
     useEffect(() => {
@@ -36,7 +36,6 @@ const Movie = ({movie}) => {
         backgroundRepeat: 'no-repeat',
         backgroundImage: `url(${imageUrl + backdrop_path})`
     };
-
     return (
         <>
             <div className={css.movie_wrap}>
@@ -48,7 +47,7 @@ const Movie = ({movie}) => {
 
                 <div className={css.shortPosterBox}>
 
-                    <NavLink to={`${id}`} className={css.posterShort}>
+                    <NavLink to={`/movies/${myMovie.id}`} className={css.posterShort}>
                         <div className={css.play}>
                             <i className="fa-solid fa-circle-play"></i>
                         </div>
@@ -62,10 +61,10 @@ const Movie = ({movie}) => {
                             <div className={favorite_status ? css.activeHeart : css.notActiveHeart}>
                                 {
                                     favorite_status ?
-                                        <div onClick={() => dispatch(favoriteActions.remove_from_favorite(movie))}>
+                                        <div onClick={() => dispatch(favoriteActions.remove_from_favorite(myMovie))}>
                                             <i className="fa-solid fa-heart-circle-minus"></i>
                                         </div> :
-                                        <div onClick={() => dispatch(favoriteActions.add_to_favorite(movie))}>
+                                        <div onClick={() => dispatch(favoriteActions.add_to_favorite(myMovie))}>
                                             <i className={`fa-solid fa-heart-circle-plus`}></i>
                                         </div>
                                 }
@@ -93,4 +92,4 @@ const Movie = ({movie}) => {
     );
 };
 
-export {Movie};
+export {MyFavoriteMovie};

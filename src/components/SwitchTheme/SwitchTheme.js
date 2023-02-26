@@ -4,7 +4,8 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 import {useDispatch, useSelector} from "react-redux";
-import {genreActions} from "../../redux/slice/genreSlice";
+
+import {genreActions} from "../../redux";
 
 const SwitchTheme = () => {
 
@@ -13,10 +14,8 @@ const SwitchTheme = () => {
     const statusTheme = JSON.parse(localStorage.getItem('themeStyle'));
 
     useEffect(() => {
-        console.log(themeStatus)
-        console.log(statusTheme)
         if (statusTheme === null) {
-            const themeStatus = true;
+            const themeStatus = false;
             localStorage.setItem('themeStyle', JSON.stringify(themeStatus));
             dispatch(genreActions.chooseTheme(themeStatus))
         } else {
@@ -71,10 +70,10 @@ const SwitchTheme = () => {
         },
     }));
 
-
     const changeTheme = () => {
         const statusTheme = JSON.parse(localStorage.getItem('themeStyle'));
         localStorage.setItem('themeStyle', JSON.stringify(!statusTheme))
+        dispatch(genreActions.chooseTheme(!statusTheme))
     }
 
     return (

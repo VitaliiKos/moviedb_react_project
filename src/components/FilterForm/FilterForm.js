@@ -2,10 +2,13 @@ import React from 'react';
 import CreatableSelect from 'react-select/creatable';
 import {useSearchParams} from "react-router-dom";
 import Select from "react-select";
+import {useSelector} from "react-redux";
 
 import {sort_by_key, year_key} from "../../constants";
+import css from './filterForm.module.css';
 
 const FilterForm = () => {
+    const {themeStatus} = useSelector(state => state.genre);
     const [searchParams, setSearchParams] = useSearchParams();
 
     const yearOptions = [
@@ -41,19 +44,17 @@ const FilterForm = () => {
     const params_for_search = Object.fromEntries([...searchParams]);
 
     const sort_by = (e) => {
-        params_for_search[sort_by_key] = e.value
-        console.log(params_for_search)
-        setSearchParams(params_for_search)
+        params_for_search[sort_by_key] = e.value;
+        setSearchParams(params_for_search);
     }
 
     const selectYear = (e) => {
-        params_for_search[year_key] = e.value
-        console.log(params_for_search)
-        setSearchParams(params_for_search)
+        params_for_search[year_key] = e.value;
+        setSearchParams(params_for_search);
     }
 
     return (
-        <div>
+        <div className={`${css.searchFormBlock} ${themeStatus ? css.searchFormDark : css.searchFormLight}`}>
             <CreatableSelect isClearable options={yearOptions} onChange={selectYear} placeholder={'Year'}/>
             <Select onChange={sort_by} placeholder={'SortBy'} options={sortOptions}/>
         </div>

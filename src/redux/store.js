@@ -6,10 +6,10 @@ import {favoriteReducer} from "./slice/favoriteSlice";
 import {actorReducer} from "./slice/actorsSlice";
 
 const rootReducer = combineReducers({
-    movie:movieReducer,
-    genre:genreReducer,
-    favorite:favoriteReducer,
-    actor:actorReducer
+    movie: movieReducer,
+    genre: genreReducer,
+    favorite: favoriteReducer,
+    actor: actorReducer
 })
 
 const setupStore = () => configureStore({

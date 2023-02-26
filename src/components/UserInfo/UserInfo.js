@@ -10,6 +10,9 @@ import Tooltip from '@mui/material/Tooltip';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import Logout from '@mui/icons-material/Logout';
 import {Settings} from "@mui/icons-material";
+import {NavLink} from "react-router-dom";
+
+import css from './userInfo.module.css';
 
 const UserInfo = () => {
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -30,15 +33,15 @@ const UserInfo = () => {
             }}>
                 <Tooltip title="Account settings">
                     <IconButton
-                        onClick={handleClick}
+                        onMouseUp={handleClick}
                         size="small"
                         sx={{ml: 2}}
                         aria-controls={open ? 'account-menu' : undefined}
                         aria-haspopup="true"
                         aria-expanded={open ? 'true' : undefined}
                     >
-                        <MenuItem onClick={handleClose}>
-                            <Avatar sx={{background: 'brown'}}/>
+                        <MenuItem onMouseUp={handleClose}>
+                            <Avatar sx={{background: '#738d75', color: '#f6f304'}}/>
                         </MenuItem>
                     </IconButton>
                 </Tooltip>
@@ -48,28 +51,29 @@ const UserInfo = () => {
                 id="account-menu"
                 open={open}
                 onClose={handleClose}
-                onClick={handleClose}
+                onMouseUp={handleClose}
                 transformOrigin={{horizontal: 'right', vertical: 'top'}}
                 anchorOrigin={{horizontal: 'right', vertical: 'bottom'}}
             >
-                <MenuItem onClick={handleClose}>
-                    <Avatar sx={{width: '28px', height: '28px', background: '#81cc30'}}/> Profile
+                <MenuItem onMouseUp={handleClose}>
+                    <Avatar
+                        sx={{width: '24px', height: '24px', background: '#81cc30', margin: '2px 12px 2px 0'}}/> Profile
                 </MenuItem>
 
                 <Divider/>
-                <MenuItem onClick={handleClose}>
-                    <ListItemIcon>
-                        <FavoriteIcon sx={{color: '#cc3030'}}/>
-                    </ListItemIcon>
-                    Favorite
-                </MenuItem>
-                <MenuItem onClick={handleClose}>
+                <NavLink to={'favorites'} className={css.favorite}>
+                    <MenuItem onMouseUp={handleClose}>
+                        <FavoriteIcon sx={{color: '#cc3030', margin: '2px 12px 2px 0'}}/>
+                        Favorite
+                    </MenuItem>
+                </NavLink>
+                <MenuItem onMouseUp={handleClose}>
                     <ListItemIcon>
                         <Settings fontSize="small"/>
                     </ListItemIcon>
                     Settings
                 </MenuItem>
-                <MenuItem onClick={handleClose}>
+                <MenuItem onMouseUp={handleClose}>
                     <ListItemIcon>
                         <Logout fontSize="small"/>
                     </ListItemIcon>

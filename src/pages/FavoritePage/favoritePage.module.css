@@ -1,0 +1,17 @@
+.favoritePage {
+    margin-top: 40px;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    min-height: 100vh;
+}
+
+.favoritePageLight {
+    background: linear-gradient(45deg, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%);
+}
+
+.favoritePageDark {
+    background: linear-gradient(45deg, #7d7e7d 0%, #0e0e0e 100%);
+
+}

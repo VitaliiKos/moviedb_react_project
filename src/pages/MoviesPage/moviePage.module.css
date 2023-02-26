@@ -1,39 +1,66 @@
-.moviesList{
+.moviesList {
     display: flex;
     flex-wrap: wrap;
 }
-.container{
+
+.container {
     margin-top: 65px;
     display: flex;
     flex-wrap: nowrap;
-    width: 70%;
+    width: 85%;
     column-gap: 20px;
 }
-.sidebar{
+
+.sidebar {
     width: 30%;
 }
-.content{
+
+.content {
     border: 2px solid aqua;
     width: 100%;
 }
-.searchInput{
+
+.searchInput {
     width: 100%;
 }
-.searchInput input{
+
+.searchInput input {
     width: 70%;
 }
-.genreWrap{
+
+.genreWrap {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-
-    background-color: #282828;
-    width: 20%;
-    background-image: url('https://s.kkhd24.co/templates/ntpl/images/menu.png');
+    position: fixed;
+    height: Calc(100vh - 170px);
+    width: 200px;
     background-repeat: no-repeat;
-    height: max-content;
     border-radius: 15px;
+    box-sizing: border-box;
+    padding: 5px 20px;
 }
-.movieWrap{
-    width: 78%;
+
+.genreWrapLight {
+    box-shadow: -6px -9px 7px rgba(37, 62, 117, 0.45), 3px 3px 5px rgba(16, 16, 136, 0.29);
+    background: radial-gradient(circle at right top, #4b50d2, #334266)
+}
+
+.genreWrapDark {
+    background-color: #282828;
+}
+
+.movieWrap {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    margin: 5px 5px 5px 230px;
+}
+
+.movieWrapLight {
+    background: radial-gradient(circle at right top, #4b50d2, #334266);
+}
+
+.movieWrapDark {
+    background: rgba(10, 10, 10, 0.74);
 }

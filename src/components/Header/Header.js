@@ -9,21 +9,23 @@ import Badge from '@mui/material/Badge';
 
 import {SwitchTheme} from "../SwitchTheme/SwitchTheme";
 import {MovieSearch} from "../MovieSearch/MovieSearch";
-import css from './header.module.css';
 import {UserInfo} from "../UserInfo/UserInfo";
 import {favoriteActions} from "../../redux";
+import css from './header.module.css';
 
 const Header = () => {
 
     const dispatch = useDispatch();
+    const {themeStatus} = useSelector(state => state.genre);
     const {favoriteCount} = useSelector(state => state.favorite);
+
     const my_favorite_movie = JSON.parse(localStorage.getItem('myMovies'));
 
     useEffect(() => {
         const count = my_favorite_movie ? Object.keys(my_favorite_movie).length : 0
         dispatch(favoriteActions.update_favorite({movie: my_favorite_movie, count}))
-    }, [dispatch, favoriteCount])
 
+    }, [dispatch, favoriteCount, themeStatus])
     const StyledBadge = styled(Badge)(({theme}) => ({
         '& .MuiBadge-badge': {
             right: -3,
@@ -34,21 +36,35 @@ const Header = () => {
     }));
 
     return (
-        <div className={css.menu}>
-            <NavLink to={''}>HOME</NavLink>
-            <NavLink to={routersPoint.movies}>MOVIES</NavLink>
+        <div className={`${css.menu} ${themeStatus ? css.menuBgDark : css.menuBgLight}`}>
+            <div className={css.home}>
+                <NavLink to={''}>HOME</NavLink>
+            </div>
+
+            <div className={css.movies}>
+                <NavLink to={routersPoint.movies}>MOVIES</NavLink>
+            </div>
+
             <div className={css.searchInput}>
                 <MovieSearch/>
             </div>
-            <NavLink to={'favorites'}>
-                <IconButton aria-label="favorite">
-                    <StyledBadge badgeContent={favoriteCount} color="secondary">
-                        <FavoriteIcon sx={{color: '#cc3030', fontSize: 32}}/>
-                    </StyledBadge>
-                </IconButton>
-            </NavLink>
-            <SwitchTheme/>
-            <UserInfo/>
+
+            <div>
+                <NavLink to={'favorites'}>
+                    <IconButton aria-label="favorite">
+                        <StyledBadge badgeContent={favoriteCount} color="secondary">
+                            <FavoriteIcon sx={{color: '#cc3030', fontSize: 32}}/>
+                        </StyledBadge>
+                    </IconButton>
+                </NavLink>
+            </div>
+
+            <div className={css.switchTheme}>
+                <SwitchTheme/>
+            </div>
+            <div className={css.userInfo}>
+                <UserInfo/>
+            </div>
         </div>
     );
 };

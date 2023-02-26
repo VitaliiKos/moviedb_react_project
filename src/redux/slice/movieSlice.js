@@ -10,11 +10,6 @@ const initialState = {
     total_results: null,
     current_page: 1,
     current_movie: null,
-    // status_search: false,
-    // for_search: {
-    //     page_param_key:1,
-    //     with_genres:'all'
-    // }
 };
 
 const getAll = createAsyncThunk(
@@ -57,18 +52,7 @@ const movieSlice = createSlice({
     name: 'movieSlice',
     initialState,
 
-    reducers: {
-        // set_params_for_search: (state) => {
-        //     state.status_search = true
-        //     // state.for_search = action.payload;
-        //
-        // },
-        // set_params_for_filter: (state) => {
-        //     state.status_search = false
-        //
-        //
-        // }
-    },
+    reducers: {},
 
     extraReducers: builder => builder
         .addCase(getAll.fulfilled, (state, action) => {
@@ -79,7 +63,6 @@ const movieSlice = createSlice({
                 state.total_results = total_results;
                 state.loading = false
                 state.current_movie = null
-                // state.search_genre = ''
             }
         )
         .addCase(getAll.rejected, (state, action) => {
@@ -104,12 +87,10 @@ const movieSlice = createSlice({
 
                 const {results, total_pages, total_results} = action.payload;
                 state.movies = results;
-                // state.current_page = page;
                 state.total_pages = total_pages;
                 state.total_results = total_results;
                 state.loading = false
                 state.current_movie = null
-                // state.search_genre = ''
             }
         )
         .addCase(getWithSearchParams.rejected, (state, action) => {
@@ -119,8 +100,6 @@ const movieSlice = createSlice({
         .addCase(getWithSearchParams.pending, (state) => {
             state.loading = true
         })
-
-
 })
 
 const {reducer: movieReducer, actions: {set_params_for_search, set_params_for_filter}} = movieSlice;

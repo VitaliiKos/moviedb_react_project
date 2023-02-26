@@ -1,25 +1,22 @@
 import React from 'react';
 import {useSelector} from "react-redux";
-import {useNavigate} from "react-router-dom";
 
-import {Movie} from "../../components";
+
+import {MyFavoriteMovie} from "../../components";
+import css from './favoritePage.module.css';
 
 const FavoritePage = () => {
-    const navigate = useNavigate();
+    const {themeStatus} = useSelector(state => state.genre);
     const {favoriteMovies} = useSelector(state => state.favorite);
     const favorite_movies_keys = Object.keys(favoriteMovies);
 
     return (
-        <div>
-            {
+        <div className={`${css.favoritePage} ${themeStatus ? css.favoritePageDark : css.favoritePageLight}`}>
+            {!!favorite_movies_keys.length &&
                 favorite_movies_keys.map(movie =>
-                    <div onClick={() => navigate(`/movies/${favoriteMovies[movie].movie.id}`)}
-                         key={favoriteMovies[movie].movie.id}>
-                        <Movie movie={favoriteMovies[movie].movie}/>
-                    </div>
+                    <MyFavoriteMovie key={favoriteMovies[movie].movie.id} myMovie={favoriteMovies[movie].movie}/>
                 )
             }
-
         </div>
     );
 };

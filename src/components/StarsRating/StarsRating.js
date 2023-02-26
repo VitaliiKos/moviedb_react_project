@@ -14,6 +14,8 @@ const StarsRating = ({rating}) => {
                     max={10}
                     precision={0.1}
 
+                    sx={{span: {color: '#ffa511', fontSize: '24px'}}}
+
                 />
             </Box>
 

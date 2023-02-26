@@ -1,4 +1,4 @@
-.genreItem{
+.genreItem {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -6,12 +6,26 @@
     box-sizing: border-box;
     width: 100%;
 }
+
 .genreLeftMenu h4 {
     color: goldenrod;
     margin: 5px;
 }
-.genreItem div:hover{
+
+.genreItem h4 {
+    text-align: left;
+}
+
+.genreItemLight:hover {
     cursor: pointer;
     width: 100%;
-    box-shadow: 5px 5px 30px 7px rgb(0, 0, 0), -5px -5px 30px 7px rgb(0, 0, 0);
+    box-shadow: -6px -6px 4px rgba(37, 62, 117, 0.45), 3px 3px 5px rgba(16, 16, 136, 0.29);
+    background-color: rgba(64, 96, 225, 0.94);
+}
+
+.genreItemDark:hover {
+    cursor: pointer;
+    width: 100%;
+    box-shadow: -6px -6px 4px rgba(37, 62, 117, 0.45), 3px 3px 5px rgba(16, 16, 136, 0.29);
+    background-color: rgba(28, 26, 26, 0.93);
 }

@@ -18,7 +18,6 @@ const MovieDetailPage = () => {
 
     return (
         <div>
-
             {current_movie &&
                 <MovieDetail current_movie={current_movie}/>
             }

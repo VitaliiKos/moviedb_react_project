@@ -8,18 +8,6 @@ const initialState = {
 
 };
 
-// const getAll = createAsyncThunk(
-//     'favoriteSlice/getAll',
-//     async ({recommendation_id}, thunkAPI) => {
-//         try {
-//             const {data} = await actorsService.getAll(recommendation_id)
-//             return data
-//         } catch (e) {
-//             return thunkAPI.rejectWithValue(e.response.data)
-//         }
-//     }
-// )
-
 
 const favoriteSlice = createSlice({
     name: "favoriteSlice",
@@ -31,12 +19,11 @@ const favoriteSlice = createSlice({
             resObj[action.payload.id] = {movie: action.payload};
             localStorage.setItem("myMovies", JSON.stringify(resObj));
 
-            state.favoriteMovies=resObj
+            state.favoriteMovies = resObj
             state.favoriteCount = Object.keys(state.favoriteMovies).length
         },
         remove_from_favorite: (state, action) => {
             delete state.favoriteMovies[action.payload.id]
-
             const favoriteMovies = JSON.parse(localStorage.getItem('myMovies'));
             delete favoriteMovies[action.payload.id]
             localStorage.setItem("myMovies", JSON.stringify(favoriteMovies));
@@ -56,7 +43,10 @@ const favoriteSlice = createSlice({
 })
 
 
-const {reducer: favoriteReducer, actions: {add_to_favorite, count_favorite, update_favorite, remove_from_favorite}} = favoriteSlice;
+const {
+    reducer: favoriteReducer,
+    actions: {add_to_favorite, count_favorite, update_favorite, remove_from_favorite}
+} = favoriteSlice;
 const favoriteActions = {add_to_favorite, count_favorite, update_favorite, remove_from_favorite}
 
 export {

@@ -1,12 +1,12 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {movieActions} from "../../redux";
 import {useSearchParams} from "react-router-dom";
 
 import {Movie} from "../Movie/Movie";
-import css from "./movieList.module.css";
+import {movieActions} from "../../redux";
 import {page_param_key} from "../../constants";
 import {FilterForm} from "../FilterForm/FilterForm";
+import css from "./movieList.module.css";
 
 const MoviesList = () => {
 
@@ -43,66 +43,50 @@ const MoviesList = () => {
                 }
             </div>
 
-            <div className={css.navcent}>
+            <div className={css.container}>
+                <ul className={css.pagination}>
+                    <li hidden={Number(params_for_search[page_param_key]) < 2} onClick={() => {
+                        change_number_page(-1)
+                    }}><a>Previous</a></li>
 
-                <a hidden={Number(params_for_search[page_param_key]) < 2} onClick={() => {
-                    set_number_page(1)
-                }}>
-                    1
-                </a>
+                    <li hidden={Number(params_for_search[page_param_key]) < 2} onClick={() => {
+                        set_number_page(1)
+                    }}><a>1</a></li>
 
-                <a hidden={Number(params_for_search[page_param_key]) < 3} onClick={() => {
-                    set_number_page(2)
-                }}>
-                    2
-                </a>
+                    <li hidden={Number(params_for_search[page_param_key]) < 3} onClick={() => {
+                        set_number_page(2)
+                    }}><a>2</a></li>
 
-                <a hidden={Number(params_for_search[page_param_key]) - 5 < 1} onClick={() => {
-                    change_number_page(-5)
-                }}>
-                    -5
-                </a>
+                    <li hidden={Number(params_for_search[page_param_key]) < 4} onClick={() => {
+                        set_number_page(3)
+                    }}><a>3</a></li>
 
-                <a hidden={
-                    Number(params_for_search[page_param_key]) < 2
-                } onClick={() => {
-                    change_number_page(-1)
-                }}>
-                    Prev
-                </a>
+                    <li className={css.notPage}><a>...</a></li>
 
-                <a>
-                    Pages
-                </a>
+                    <li hidden={Number(params_for_search[page_param_key]) + 1 >= 500 ||
+                        Number(params_for_search[page_param_key]) + 1 >= total_pages}
+                        onClick={() => {
+                            change_number_page(1)
+                        }}><a>{Number(params_for_search[page_param_key]) + 1}</a></li>
 
-                <a hidden={
-                    Number(params_for_search[page_param_key]) >= 500 ||
-                    Number(params_for_search[page_param_key]) === total_pages
-                } onClick={() => {
-                    change_number_page(1)
-                }}>
-                    Next
-                </a>
+                    <li hidden={Number(params_for_search[page_param_key]) + 2 >= 500 ||
+                        Number(params_for_search[page_param_key]) + 2 >= total_pages} onClick={() => {
+                        change_number_page(2)
+                    }}><a>{Number(params_for_search[page_param_key]) + 2}</a></li>
 
-                <a hidden={
-                    Number(params_for_search[page_param_key]) + 10 >= 500 ||
-                    Number(params_for_search[page_param_key]) + 10 >= total_pages
-                } onClick={() => {
-                    change_number_page(10)
-                }}>
-                    +10
-                </a>
+                    <li hidden={
+                        Number(params_for_search[page_param_key]) === total_pages ||
+                        Number(params_for_search[page_param_key]) >= 500
+                    } onClick={() => {
+                        set_number_page(total_pages > 500 ? 500 : total_pages)
+                    }}><a> {total_pages > 500 ? 500 : total_pages}</a></li>
 
-                <a hidden={
-                    Number(params_for_search[page_param_key]) === total_pages ||
-                    Number(params_for_search[page_param_key]) >= 500
-                } onClick={() => {
-                    set_number_page(total_pages > 500 ? 500 : total_pages)
-                }}>
-                    {total_pages > 500 ? 500 : total_pages}
-                </a>
-
-
+                    <li hidden={Number(params_for_search[page_param_key]) >= 500 ||
+                        Number(params_for_search[page_param_key]) === total_pages
+                    } onClick={() => {
+                        change_number_page(1)
+                    }}><a>Next</a></li>
+                </ul>
             </div>
 
         </div>

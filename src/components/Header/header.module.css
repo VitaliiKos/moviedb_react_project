@@ -4,8 +4,6 @@ html, body {
 }
 
 .menu {
-    background: linear-gradient(135deg, #959595 0%, #0d0d0d 46%, #010101 50%, #0a0a0a 53%, #4e4e4e 76%, #383838 87%, #1b1b1b 100%);
-
     min-height: 60px;
     display: flex;
     justify-content: center;
@@ -14,12 +12,29 @@ html, body {
     width: 100%;
     position: fixed;
     z-index: 3;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-.menu a {
+.menuBgLight {
+    background-image: url('light.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.menuBgDark {
+    background-image: url('dark.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home a, .movies a {
     color: gold;
-    font-size: 28px;
+    font-size: 20px;
     text-decoration: none;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
 
 }
 
@@ -40,13 +55,24 @@ html, body {
     overflow-y: auto;
 }
 
-.menu a[class='active'] {
-    text-decoration: underline;
-    color: red;
+.home a[class='active'], .movies a[class='active'] {
+    text-decoration: none;
+    color: yellowgreen;
+    font-weight: 700;
+    font-size: 20px;
+    text-shadow: 1px 1px 2px #161716, 0 0 1em #03f817, 0 0 0.2em #239612;
 }
-.searchInput{
-    width: 100%;
+
+.searchInput {
+    position: relative;
+    width: 30%;
 }
-.searchInput input{
-    width: 70%;
+
+.userInfo {
+    position: absolute;
+    right: 70px;
+}
+
+.switchTheme {
+    margin-left: 50px;
 }

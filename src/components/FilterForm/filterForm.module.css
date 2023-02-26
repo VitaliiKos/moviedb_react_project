@@ -1,0 +1,33 @@
+.searchFormBlock {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;
+    gap: 10px;
+}
+
+.searchFormLight div {
+    background-color: rgba(162, 169, 201, 0.81);
+    color: snow;
+    width: max-content;
+    z-index: 2;
+
+}
+
+.searchFormLight > div {
+    box-sizing: border-box;
+    margin: 0 15px;
+}
+
+.searchFormDark div {
+    z-index: 2;
+    background-color: rgba(85, 85, 85, 0.81);
+    color: snow;
+    width: max-content;
+}
+
+.searchFormDark > div {
+    box-sizing: border-box;
+    margin: 0 15px;
+}
