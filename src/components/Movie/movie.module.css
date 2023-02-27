@@ -160,3 +160,55 @@
 .movieDescribe h4 {
     margin: 5px;
 }
+
+@media screen and (max-width: 992px) {
+    .moviePosterBgCover {
+     font-size: 12px;
+    }
+    .shortDescribe, .moviePosterBgCover {
+        visibility: hidden;
+        display: none;
+    }
+    .movie_wrap{
+        width: 30%;
+    }
+    .posterShort img {
+        height: 150px;
+        margin-left: 25px;
+    }
+    .shortPosterBox{
+        justify-content: center;
+    }
+    .posterTitle{
+        flex-direction: column-reverse;
+
+    }
+    .posterTitle h3 {
+        margin: 0;
+        font-size: 12px;
+    }
+    .movie_wrap{
+        position: relative;
+    }
+    .movieRating{
+        position: absolute;
+        z-index: 5;
+        bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .movie_wrap{
+        width: 100%;
+    }
+    .posterShort img {
+        margin-left: 0;
+        height: 200px;
+    }
+    .shortDescribe, .moviePosterBgCover {
+        visibility: visible;
+        display: block;
+        font-size: 10px;
+    }
+
+}

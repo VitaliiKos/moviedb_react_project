@@ -5,6 +5,8 @@
     width: 100%;
     background: -webkit-linear-gradient(-45deg, #d2dfed 0%, #c8d7eb 26%, #a6c0e3 47%, #a6c0e3 47%, #bed0ea 51%, #afc7e8 62%, #bad0ef 75%, #99b5db 88%, #799bc8 100%);
     min-height: 100vh;
+    max-width: 1900px;
+
 }
 
 .wrapper {

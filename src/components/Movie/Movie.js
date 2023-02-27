@@ -43,7 +43,9 @@ const Movie = ({movie}) => {
 
                 <div className={`${css.posterTitle} ${themeStatus ? css.posterTitleDark : css.posterTitleLight}`}>
                     <h3>{title}</h3>
-                    <StarsRating rating={vote_average}/>
+                    <div className={css.movieRating}>
+                        <StarsRating rating={vote_average}/>
+                    </div>
                 </div>
 
                 <div className={css.shortPosterBox}>

@@ -1,0 +1,10 @@
+.movieRating span {
+    font-size: 24px;
+    color: #ffa511;
+}
+
+@media screen and (max-width: 992px) {
+    .movieRating span {
+        font-size: 12px;
+    }
+}

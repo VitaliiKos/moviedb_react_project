@@ -15,3 +15,16 @@
     background: linear-gradient(45deg, #7d7e7d 0%, #0e0e0e 100%);
 
 }
+@media screen and (max-width: 1200px) {
+    .favoritePage{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .favoritePage{
+        width: 80%;
+    }
+}
+.shortDescribe{
+
+}

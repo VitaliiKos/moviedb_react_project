@@ -5,10 +5,11 @@ import {routersPoint} from "./routes";
 
 import {FavoritePage, HomePage, MovieDetailPage, MoviesPage, PageNotFound} from "./pages";
 import {MoviesList} from "./components";
+import css from './app.module.css';
 
 const App = () => {
     return (
-        <div>
+        <div className={css.app}>
             <Routes>
                 <Route path={routersPoint.index} element={<MainLayout/>}>
                     <Route index element={<HomePage/>}/>

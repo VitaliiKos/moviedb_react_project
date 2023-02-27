@@ -87,11 +87,12 @@
     animation: move-background 150s linear infinite;
 }
 
+.homePage{
+    max-width: 1900px;
+
+}
 .homePage img {
-    height: 50vh;
-    width: 50vh;
     position: absolute;
-    z-index: 3;
     right: 20px;
 }
 
@@ -100,29 +101,58 @@
     padding: 0;
     height: Calc(100vh - 60px);
     width: 100vw;
-    z-index: 2;
+    /*z-index: 2;*/
     background-image: url('main.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .textDescribe {
-    font-size: 20px;
+    font-size: 18px;
     font-family: "Poppins", sans-serif;
-    line-height: 28px;
+    line-height: 24px;
     width: 49%;
+    max-width: 1900px;
     position: absolute;
     text-align: justify;
-    top: 220px;
+    top: 120px;
     font-weight: 500;
 }
 
 .textDescribeLight {
     color: #e74c3c;
-    right: 40px
+    right: 40px;
 }
 
 .textDescribeDark {
     color: gold;
     left: 100px;
+}
+
+@media screen and (max-width: 1200px) {
+    .textDescribe {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .textDescribe {
+        width: 80%;
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .textDescribeDark {
+        left: 50px;
+    }
+}
+@media screen and (max-width: 576px) {
+    .textDescribe {
+        width: 80%;
+        font-size: 12px;
+        line-height: 16px;
+        top: 70px;
+    }
+    .textDescribeDark {
+        left: 20px;
+    }
 }
