@@ -55,10 +55,17 @@ const UserInfo = () => {
                 transformOrigin={{horizontal: 'right', vertical: 'top'}}
                 anchorOrigin={{horizontal: 'right', vertical: 'bottom'}}
             >
-                <MenuItem onMouseUp={handleClose}>
-                    <Avatar
-                        sx={{width: '24px', height: '24px', background: '#81cc30', margin: '2px 12px 2px 0'}}/> Profile
-                </MenuItem>
+                <NavLink to={'userProfile'} className={css.favorite}>
+                    <MenuItem onMouseUp={handleClose}>
+                        <Avatar
+                            sx={{
+                                width: '24px',
+                                height: '24px',
+                                background: '#81cc30',
+                                margin: '2px 12px 2px 0'
+                            }}/> Profile
+                    </MenuItem>
+                </NavLink>
 
                 <Divider/>
                 <NavLink to={'favorites'} className={css.favorite}>

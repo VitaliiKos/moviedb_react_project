@@ -3,7 +3,7 @@ export const routersPoint = {
     home: 'home',
     movies: 'movies',
     moviesId: ':id',
-    userInfo: '/userInfo',
+    userInfo: '/userProfile',
     favorites: ':favorites',
     favoriteId: ':id',
     notFound: '*'

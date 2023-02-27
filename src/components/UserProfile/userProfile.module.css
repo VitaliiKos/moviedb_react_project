@@ -1,0 +1,125 @@
+.mainPhoto {
+    width: 25%;
+}
+
+.mainPhoto img {
+    width: 80%;
+    border-radius: 50%;
+    border: 3px solid #ddd;
+    padding: 5px;
+}
+
+.mainPhoto img:hover {
+    transform: scaleX(-1);
+    box-shadow: 0 0 10px 5px rgba(186, 143, 0, 0.8);
+
+}
+
+.mainDetails, .mainDetailsLight {
+    margin-top: 70px;
+    width: 80%;
+    border-radius: 35px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    text-shadow: 1px 1px 2px black, 0 0 25px #e2f505, 0 0 5px darkblue;
+    font-size: 24px;
+}
+
+.userDescription, .userDescriptionLight {
+    margin: 10px;
+    width: 80%;
+    padding: 10px 20px;
+    font-style: italic;
+    border-radius: 35px;
+    text-align: justify;
+}
+
+.mainDetails a, .mainDetailsLight a {
+    text-decoration: none;
+    color: #eedc13;
+}
+
+.mainDetails {
+    color: white;
+    background: rgba(60, 60, 60, 0.25);
+
+}
+
+.userDescription {
+    background: rgba(60, 60, 60, 0.24);
+    color: white;
+}
+
+.actorBlock{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-image: url('Will Smith.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+@media screen and (max-width: 1200px) {
+    .mainDetails, .mainDetailsLight {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .mainPhoto {
+        width: 55%;
+        margin: 20px;
+    }
+
+    .mainPhoto img {
+        border-radius: 55px;
+    }
+
+    .mainDetailsLight {
+        background: rgba(84, 214, 245, 0.9);
+    }
+
+    .mainDetails {
+        background: rgba(60, 60, 60, 0.7);
+
+    }
+
+    .userDescriptionLight, .userDescription {
+        font-size: 22px;
+    }
+
+    .userDescription {
+        background: rgba(60, 60, 60, 0.8);
+    }
+
+    .userDescriptionLight {
+        background: rgba(84, 214, 245, 0.8);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .userDescriptionLight, .userDescription {
+        font-size: 24px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .mainDetails, .mainDetailsLight {
+        font-size: 22px;
+    }
+
+    .userDescriptionLight, .userDescription {
+        font-size: 20px;
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+    .mainDetails a, .mainDetailsLight a {
+        font-size: 22px;
+    }
+
+
+}
+

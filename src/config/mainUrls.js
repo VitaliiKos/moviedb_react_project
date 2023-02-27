@@ -15,7 +15,8 @@ const mainUrl = {
         queryParams: '/search/movie'
     },
     actors: {
-        actors: (id) => `movie/${id}/credits`
+        actors: (id) => `movie/${id}/credits`,
+        famous:(id)=>`/person/${id}`
     },
 }
 

@@ -3,7 +3,7 @@ import {MainLayout} from "./Layouts";
 import {Route, Routes} from "react-router-dom";
 import {routersPoint} from "./routes";
 
-import {FavoritePage, HomePage, MovieDetailPage, MoviesPage, PageNotFound} from "./pages";
+import {FavoritePage, HomePage, MovieDetailPage, MoviesPage, PageNotFound, UserPage} from "./pages";
 import {MoviesList} from "./components";
 import css from './app.module.css';
 
@@ -18,6 +18,7 @@ const App = () => {
                         <Route path={routersPoint.moviesId} element={<MovieDetailPage/>}/>
                     </Route>
                     <Route path={routersPoint.favorites} element={<FavoritePage/>}/>
+                    <Route path={routersPoint.userInfo} element={<UserPage/>}/>
                     <Route path={routersPoint.notFound} element={<PageNotFound/>}/>
 
 
