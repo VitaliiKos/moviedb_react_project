@@ -41,7 +41,7 @@ const UserInfo = () => {
                         aria-expanded={open ? 'true' : undefined}
                     >
                         <MenuItem onMouseUp={handleClose}>
-                            <Avatar sx={{background: '#738d75', color: '#f6f304'}}/>
+                            <Avatar sx={{background: '#738d75', color: '#f6f304',margin: '2px 12px 2px 0'}}/>
                         </MenuItem>
                     </IconButton>
                 </Tooltip>

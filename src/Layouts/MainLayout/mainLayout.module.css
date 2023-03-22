@@ -2,11 +2,9 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    width: 100%;
     background: -webkit-linear-gradient(-45deg, #d2dfed 0%, #c8d7eb 26%, #a6c0e3 47%, #a6c0e3 47%, #bed0ea 51%, #afc7e8 62%, #bad0ef 75%, #99b5db 88%, #799bc8 100%);
     min-height: 100vh;
     max-width: 1900px;
-
 }
 
 .wrapper {
@@ -26,7 +24,6 @@
 }
 
 .wrapperBgLight {
-    background: -webkit-linear-gradient(left, #b3dced 0%, #29b8e5 50%, #bce0ee 100%);
     background: linear-gradient(to right, #b3dced 0%, #29b8e5 50%, #bce0ee 100%);
 }
 
@@ -45,10 +42,8 @@
 }
 
 .footerBgLight {
-    background: -webkit-linear-gradient(top, #d0e4f7 0%, #73b1e7 24%, #0a77d5 50%, #539fe1 79%, #87bcea 100%);
     background: linear-gradient(to bottom, #d0e4f7 0%, #73b1e7 24%, #0a77d5 50%, #539fe1 79%, #87bcea 100%);
     color: #1c1c1c;
-
 }
 
 .footerBgDark {

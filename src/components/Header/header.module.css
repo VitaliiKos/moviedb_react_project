@@ -12,9 +12,10 @@ html, body {
     width: 100%;
     position: fixed;
     z-index: 3;
-    padding: 0;
-    margin: 0;
+
     box-sizing: border-box;
+    padding: 0 20px 0 0;
+    margin: 0;
 }
 
 .menuBgLight {
